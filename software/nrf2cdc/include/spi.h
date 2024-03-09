@@ -36,7 +36,7 @@ extern "C" {
 #include "system.h"
 
 // SPI Parameters
-#define SPI_PRESC           6     // SPI_CLKRATE = F_CPU / (2 << SPI_PRESC)
+#define SPI_PRESC           2     // SPI_CLKRATE = F_CPU / (2 << SPI_PRESC)
 
 // I2C Functions and Macros
 #define SPI_busy()          (SPI1->STATR & SPI_STATR_BSY)
