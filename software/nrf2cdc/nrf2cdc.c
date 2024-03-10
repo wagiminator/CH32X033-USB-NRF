@@ -1,5 +1,5 @@
 // ===================================================================================
-// Project:   Example for CH32X035/X034/X033
+// Project:   NRF2CDC for nRF24L01+ 2.4GHz Transceiver USB Stick based on CH32X033
 // Version:   v1.0
 // Year:      2023
 // Author:    Stefan Wagner
@@ -10,7 +10,9 @@
 //
 // Description:
 // ------------
-// Blink example.
+// NRF2CDC is a simple development tool for wireless applications based on the
+// nRF24L01+ 2.4GHz transceiver module. It provides a serial interface for
+// communication with the module via USB CDC.
 //
 // References:
 // -----------
@@ -23,16 +25,36 @@
 // - Press the BOOT button on the MCU board and keep it pressed while connecting it
 //   via USB to your PC.
 // - Run 'make flash'.
+//
+// Operating Instructions:
+// -----------------------
+// Plug the device into a USB port, it should be detected as a CDC device. Open a 
+// serial monitor, BAUD rate doesn't matter. Enter the text to be sent, terminated
+// with a Newline (NL or '\ n'). A string that begins with an exclamation mark ('!')
+// is recognized as a command. The command is given by the letter following the
+// exclamation mark. Command arguments are appended as bytes in 2-digit hexadecimal
+// directly after the command. The following commands can be used to set the NRF:
+//
+// cmd  description       example         example description
+// -----------------------------------------------------------------------------------
+//  c   set channel       !c2A            set channel to 0x2A (0x00 - 0x7F)
+//  t   set TX address    !t7B271F1F1F    addresses are 5 bytes, LSB first
+//  r   set RX address    !r41C355AA55    addresses are 5 bytes, LSB first
+//  s   set speed         !s02            data rate (00:250kbps, 01:1Mbps, 02:2Mbps)
+//
+// Enter just the exclamation mark ('!') for the actual NRF settings to be printed
+// in the serial monitor. The selected settings are saved in the data flash and are
+// retained even after a restart.
 
 
 // ===================================================================================
 // Libraries, Definitions and Macros
 // ===================================================================================
-#include <config.h>
+#include <config.h>                               // user configurations
 #include <system.h>                               // system functions
 #include <gpio.h>                                 // GPIO functions
-#include <usb_cdc.h>
-#include <nrf24l01.h>
+#include <usb_cdc.h>                              // USB CDC functions
+#include <nrf24l01.h>                             // nRF24L01+ functions
 
 
 // Global variables
