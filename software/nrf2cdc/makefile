@@ -1,7 +1,7 @@
 # ===================================================================================
 # Project:  CH32X035/X034/X033 Example
 # Author:   Stefan Wagner
-# Year:     2023
+# Year:     2024
 # URL:      https://github.com/wagiminator    
 # ===================================================================================
 # Type "make help" in the command line.

@@ -1,7 +1,7 @@
 // ===================================================================================
 // Project:   NRF2CDC for nRF24L01+ 2.4GHz Transceiver USB Stick based on CH32X033
 // Version:   v1.0
-// Year:      2023
+// Year:      2024
 // Author:    Stefan Wagner
 // Github:    https://github.com/wagiminator
 // EasyEDA:   https://easyeda.com/wagiminator
@@ -43,8 +43,7 @@
 //  s   set speed         !s02            data rate (00:250kbps, 01:1Mbps, 02:2Mbps)
 //
 // Enter just the exclamation mark ('!') for the actual NRF settings to be printed
-// in the serial monitor. The selected settings are saved in the data flash and are
-// retained even after a restart.
+// in the serial monitor.
 
 
 // ===================================================================================
