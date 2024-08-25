@@ -15,6 +15,11 @@ CH32X033 is a low-cost microcontroller that utilizes the QingKe 32-bit RISC-V4C 
 ## nRF24L01+ 2.4GHz Transceiver Module
 The nRF24L01+ is a highly integrated, ultra-low power (ULP) 2Mbps RF transceiver IC for the 2.4GHz ISM (Industrial, Scientific and Medical) band. It is designed to be used as a wireless communication module in a variety of applications, such as home automation, wireless gaming, and the Internet of Things (IoT). The module is equipped with an SPI interface, which makes it simple to connect to a variety of microcontrollers, such as the Arduino, Raspberry Pi, and others.
 
+## Building Instructions
+1. Take the Gerber files (the *zip* file inside the *hardware* folder) and upload them to a PCB (printed circuit board) manufacturer of your choice (e.g., [JLCPCB](https://jlcpcb.com/)). They will use these files to create the circuit board for your device and send it to you.
+2. Once you have the PCB, you can start soldering the components onto it. Use the BOM (bill of materials) and schematic as a guide to make sure everything is connected correctly. You can find the corresponding files in the *hardware* folder.
+3. Upload the firmware by following the instructions in the next section (see below).
+
 ![USB2NRF_pic2.jpg](https://raw.githubusercontent.com/wagiminator/CH32X033-USB-NRF/main/documentation/USB2NRF_pic2.jpg)
 ![USB2NRF_pic3.jpg](https://raw.githubusercontent.com/wagiminator/CH32X033-USB-NRF/main/documentation/USB2NRF_pic3.jpg)
 
@@ -65,11 +70,6 @@ pip install chprog
 Open a terminal and navigate to the folder with the *makefile*. Press the BOOT button and keep it pressed while connecting the board to the USB port of your PC. Run the following command to compile and upload:
 ```
 make flash
-```
-
-If you want to just upload the pre-compiled binary, run the following command instead:
-```
-chprog bin/<firmware>.bin
 ```
 
 ### Other Operating Systems
